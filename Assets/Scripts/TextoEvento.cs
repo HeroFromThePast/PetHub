@@ -10,6 +10,7 @@ public class TextoEvento : MonoBehaviour
     [SerializeField] Eventos positivo, negativo;
     [SerializeField] Image cuadroTexto;
     [SerializeField] TextMeshProUGUI mensaje;
+    public Animator textBoxAnimator;
 
    
     private void Start()
@@ -34,10 +35,16 @@ public class TextoEvento : MonoBehaviour
     {
         mensaje.ClearMesh();
         mensaje.text = mensajes[0];
+        textBoxAnimator.SetBool("OpenMessage", true);
     }
     public void EventoNegativo()
     {
         mensaje.ClearMesh();
         mensaje.text = mensajes[1];
+        textBoxAnimator.SetBool("OpenMessage", true);
+    }
+    public void CerrarMensaje()
+    {
+        textBoxAnimator.SetBool("OpenMessage", false);
     }
 }
