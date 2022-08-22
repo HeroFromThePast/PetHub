@@ -16,9 +16,9 @@ public class Estadisticas : MonoBehaviour
 
     private void Start()
     {
-        salud = 100;
-        hambre = 100;
-        animo = 100;
+        //salud = 100;
+        //hambre = 1;
+        //animo = 100;
         instance = this;
         subirA.GEvent += SubirAnimo;
         subirH.GEvent += SubirHambre;
