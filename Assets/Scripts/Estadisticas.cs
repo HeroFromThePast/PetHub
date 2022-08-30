@@ -9,7 +9,7 @@ public class Estadisticas : MonoBehaviour
     {
         get => instance;
     }
-    [SerializeField] float salud, hambre, animo;
+     public float salud, hambre, animo;
     
     [SerializeField] Eventos subirA, subirH, subirS, bajarA, bajarH, bajarS;
     public float aumentoS,aumentoH,aumentoA,disminucionS, disminucionH, disminucionA;

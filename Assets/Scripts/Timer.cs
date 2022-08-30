@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] int minutes, seconds;
+    public int minutes, seconds;
     [SerializeField] Eventos inicioTimer;
     [SerializeField] Eventos[] evento;
     [SerializeField]int m, s;
-    [SerializeField] int mGuardado, sGuardado;
+    public int mGuardado, sGuardado;
     // Start is called before the first frame update
     void Start()
     {
