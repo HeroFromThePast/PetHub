@@ -5,7 +5,7 @@ using UnityEngine;
 public class SituacionesYCambios : ScriptableObject
 {
     [SerializeField] string nombreSituacion;
-    [SerializeField] float aS, aA, aH,dS,dA,dH;
+    [SerializeField] float aS, aA, aAl,dS,dA,dAl;
     
     
     
@@ -17,10 +17,10 @@ public class SituacionesYCambios : ScriptableObject
     {
         
             mascota.aumentoA = aA;
-            mascota.aumentoH = aH;
+            mascota.aumentoAl = aAl;
             mascota.aumentoS = aS;
             mascota.disminucionA = dA;
-            mascota.disminucionH = dH;
+            mascota.disminucionAl = dAl;
             mascota.disminucionS = dS;
         
     }
