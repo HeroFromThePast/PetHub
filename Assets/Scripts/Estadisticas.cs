@@ -9,10 +9,10 @@ public class Estadisticas : MonoBehaviour
     {
         get => instance;
     }
-     public float salud, hambre, animo;
+     public float salud, alimentacion, animo;
     
-    [SerializeField] Eventos subirA, subirH, subirS, bajarA, bajarH, bajarS;
-    public float aumentoS,aumentoH,aumentoA,disminucionS, disminucionH, disminucionA;
+    [SerializeField] Eventos subirA, subirAl, subirS, bajarA, bajarAl, bajarS;
+    public float aumentoS,aumentoAl,aumentoA,disminucionS, disminucionAl, disminucionA;
 
     private void Start()
     {
@@ -21,10 +21,10 @@ public class Estadisticas : MonoBehaviour
         //animo = 100;
         instance = this;
         subirA.GEvent += SubirAnimo;
-        subirH.GEvent += SubirHambre;
+        subirAl.GEvent += SubirAlimentacion;
         subirS.GEvent += SubirSalud;
         bajarA.GEvent += BajarAnimo;
-        bajarH.GEvent += BajarHambre;
+        bajarAl.GEvent += BajarAlimentacion;
         bajarS.GEvent += BajarSalud;
     }
     void SubirSalud()
@@ -35,12 +35,12 @@ public class Estadisticas : MonoBehaviour
             salud = 100;
         }
     }
-    void SubirHambre()
+    void SubirAlimentacion()
     {
-        hambre += aumentoH;
-        if (hambre > 100)
+        alimentacion += aumentoAl;
+        if (alimentacion > 100)
         {
-            hambre = 100;
+            alimentacion = 100;
         }
     }
     void SubirAnimo()
@@ -59,12 +59,12 @@ public class Estadisticas : MonoBehaviour
             salud = 1;
         }
     }
-    void BajarHambre()
+    void BajarAlimentacion()
     {
-        hambre -= disminucionH;
-        if (hambre < 1)
+        alimentacion -= disminucionAl;
+        if (alimentacion < 1)
         {
-            hambre = 1;
+            alimentacion = 1;
         }
     }
     void BajarAnimo()
@@ -78,10 +78,10 @@ public class Estadisticas : MonoBehaviour
     private void OnDestroy()
     {
         subirA.GEvent -= SubirAnimo;
-        subirH.GEvent -= SubirHambre;
+        subirAl.GEvent -= SubirAlimentacion;
         subirS.GEvent -= SubirSalud;
         bajarA.GEvent -= BajarAnimo;
-        bajarH.GEvent -= BajarHambre;
+        bajarAl.GEvent -= BajarAlimentacion;
         bajarS.GEvent -= BajarSalud;
     }
 }
