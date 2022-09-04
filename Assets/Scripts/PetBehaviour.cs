@@ -30,6 +30,8 @@ public class PetBehaviour : MonoBehaviour
         }
     }
 
+    
+    
     public void UpdateIndex()
     {
         if (stoppedTime == 0)
