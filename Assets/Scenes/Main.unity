@@ -3429,10 +3429,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: perrito
       objectReference: {fileID: 0}
-    - target: {fileID: 2708429312771656842, guid: e0ae6acf4bcc1e9468040381bdb0ea90, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 719d5a79ee2e20944b8e78d15aff2a1d, type: 2}
     - target: {fileID: 2708429312771656844, guid: e0ae6acf4bcc1e9468040381bdb0ea90, type: 3}
       propertyPath: m_RootOrder
       value: 5

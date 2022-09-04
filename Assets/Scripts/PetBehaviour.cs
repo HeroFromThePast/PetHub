@@ -17,6 +17,7 @@ public class PetBehaviour : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log(System.DateTime.Now);
         waypointIndex = Random.Range(0, waypoints.Length);
         UpdateDestination();
     }
@@ -29,6 +30,8 @@ public class PetBehaviour : MonoBehaviour
         }
     }
 
+    
+    
     public void UpdateIndex()
     {
         if (stoppedTime == 0)
