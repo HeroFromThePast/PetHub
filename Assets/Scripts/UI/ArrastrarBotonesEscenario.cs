@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class ArrastrarBotonesEscenario : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float aparicionBoton;
+    [SerializeField] Vector2 posicionNueva, posicionInicial;
+    [SerializeField] Eventos aparicion, desaparicion;
+
     void Start()
     {
-        
+        transform.localPosition = posicionInicial;
+        aparicion.GEvent += ArrastrarBoton;
+        desaparicion.GEvent += DesaparecerBoton;
     }
 
-    // Update is called once per frame
-    void Update()
+    void ArrastrarBoton()
     {
-        
+        transform.LeanMoveLocal(posicionNueva, aparicionBoton).setEaseOutQuart();
+    }
+    void DesaparecerBoton()
+    {
+        transform.LeanMoveLocal(posicionInicial, aparicionBoton).setEaseOutQuart();
+    }
+    private void OnDestroy()
+    {
+        aparicion.GEvent -= ArrastrarBoton;
+        desaparicion.GEvent -= DesaparecerBoton;
     }
 }
