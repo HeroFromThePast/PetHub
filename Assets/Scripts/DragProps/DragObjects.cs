@@ -3,16 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragObjects : MonoBehaviour, IDragHandler
+public class DragObjects : MonoBehaviour
 {
-    public float z = 0.0f;
 
-    public void OnDrag(PointerEventData eventData)
+    private Vector3 mOffset;
+    private float mZCoord;
+
+    void OnMouseDown()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = z;
-
-        transform.position = Camera.main.ScreenToWorldPoint(mousePosition); 
+        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        mOffset = gameObject.transform.position - GetMouseWorldPos();
     }
-    
+    private void OnMouseDrag()
+    {
+        transform.position = GetMouseWorldPos() + mOffset;
+
+    }
+
+    private Vector3 GetMouseWorldPos()
+    {
+        Vector3 mousePoint = Input.mousePosition;
+
+        mousePoint.z = mZCoord;
+        return Camera.main.ScreenToWorldPoint(mousePoint);
+    }
+
 }
